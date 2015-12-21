@@ -1,20 +1,20 @@
 #!/bin/bash
-
+#perform full grid search for restricted set of users
 
 
 Cs=(1.0)
-gammas=(0.1 0.01 0.001 0.0001 0.00001)
-epsilons=(0.1 0.01 0.001)
+gammas=(100.0 10.0 1.0 0.1 0.01 0.001 0.0001 0.00001)
+epsilons=(0.1 0.01 0.001 0.0001 0.00001)
 tss=(1.0 10.0 100.0 1000.0 10000.0)
-comps=(1 2 3 4 5)
+comps=(3)
+users=() #fill in teh user names here
 
-export MONTH=9
+export MONTH=10
 
 
 for comp in ${comps[@]}
 do
 echo $comp
-users=$(<valid_users_${MONTH}_$comp.txt)
 for u in ${users[@]}
 do
 echo $u

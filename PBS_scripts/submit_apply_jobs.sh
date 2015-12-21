@@ -1,11 +1,11 @@
 #!/bin/bash
 
-users=$(<users12.csv)
+users=$(<users10.csv)
 
 
 
-export MONTH=12
-export MINT=1000
+export MONTH=10
+export MINT=1000 #minimum number of training points
 
 for u in ${users[@]}
 do

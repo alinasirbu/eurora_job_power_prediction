@@ -1,8 +1,7 @@
 #!/bin/bash
-#PBS -A IscrC_PM-HPC             
+#this script applies teh global model for one user and one month            
 #PBS -l walltime=00:30:00
 #PBS -l select=1:ncpus=1 
-#PBS -q route
 #PBS -N apply_user_job
 
 module load gnu
@@ -15,7 +14,7 @@ module load matplotlib
 
 cd $PBS_O_WORKDIR
 hostname
-export PYTHONPATH=$PYTHONPATH:/galileo/home/userexternal/asirbu00/sw/lib/python2.7/site-packages
+export PYTHONPATH=$PYTHONPATH:[user path to python]
 echo python one_user_apply.py $RUNUSER $MONTH $MINT
 python one_user_apply.py $RUNUSER $MONTH $MINT
 

@@ -1,11 +1,11 @@
 #!/bin/bash
-
-users=$(<users9.csv)
+##submits global jobs for users in file users10.csv 
+users=$(<users10.csv)
 
 comps=(1 2 3 4 5)
 
 
-export MONTH=9
+export MONTH=10
 
 for u in ${users[@]}
 do

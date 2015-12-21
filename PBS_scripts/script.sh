@@ -1,8 +1,7 @@
-#!/bin/bash
-#PBS -A IscrC_PM-HPC             
+#!/bin/bash  
+#this script submits one grid search run to the PBS          
 #PBS -l walltime=05:00:00
 #PBS -l select=1:ncpus=1 
-#PBS -q route
 #PBS -N user_job
 
 module load gnu
@@ -15,7 +14,7 @@ module load matplotlib
 
 cd $PBS_O_WORKDIR
 hostname
-export PYTHONPATH=$PYTHONPATH:/galileo/home/userexternal/asirbu00/sw/lib/python2.7/site-packages
+export PYTHONPATH=$PYTHONPATH:[user path to python]
 echo python one_user_run.py $RUNUSER $C $GAMMA $EPSILON $TS $COMP $MONTH
 python one_user_run.py $RUNUSER $C $GAMMA $EPSILON $TS $COMP $MONTH
 

@@ -1,8 +1,7 @@
 #!/bin/bash
-#PBS -A IscrC_PM-HPC             
+#script to submit one job only , used for collecting results            
 #PBS -l walltime=3:00:00
 #PBS -l select=1:ncpus=1 
-#PBS -q route
 #PBS -N user_job
 
 module load gnu
@@ -15,8 +14,8 @@ module load matplotlib
 
 cd $PBS_O_WORKDIR
 hostname
-export PYTHONPATH=$PYTHONPATH:/galileo/home/userexternal/asirbu00/sw/lib/python2.7/site-packages
-python collect_results_grid.py sdecherc 
+export PYTHONPATH=$PYTHONPATH:[user path to python]
+python collect_results_grid.py [username] 
 
 
 
